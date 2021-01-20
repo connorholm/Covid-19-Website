@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for news in newsInfo %}
+    <a href="{{ news.source }}">
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <h2>{{ news.company }}</h2>
+            </div>
+            <h5 id="header-titles">{{ news.title }}</h5>
+            <img id="header-image" src="{{ news.imageSource }}">
+        </div>
+    </article>
+    </a>
+    {% endfor %}
+{% endblock content %}

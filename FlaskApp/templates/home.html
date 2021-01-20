@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <h2>World Wide</h2>
+            </div>
+            <h5>Total Cases: <a class="article-content" >{{ worldInfo.worldCases }}</a></h5>
+            <h5 class="article-content">Total Deaths: {{ worldInfo.worldDeaths }}</h5>
+            {% if worldInfo.newWorldCases != "No data" %}
+                <h5 class= "article-content">Daily Cases: {{ worldInfo.newWorldCases }}</h5>
+            {% endif %}
+        </div>
+    </article>
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <h2>United States</h2>
+            </div>
+            <h5 class="article-content" >Total US Cases: {{ worldInfo.usCases }}</h5>
+            <h5 class="article-content">Total US Deaths: {{ worldInfo.usDeaths }}</h5>
+            <h5 class="article-content">Daily Cases: {{ worldInfo.newUSCases }}</h5>
+        </div>
+    </article>
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <h2>Minnesota</h2>
+            </div>
+            <h5 class="article-content" >Total Minnesota Cases: {{ worldInfo.totalMinnesotaCases }}</h5>
+            <h5 class="article-content">Total Minnesota Deaths: {{ worldInfo.totalMinnesotaDeaths }}</h5>
+            <h5 class="article-content">Daily Cases: {{ worldInfo.newMinnesotaCases}}</h5>
+        </div>
+    </article>
+
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <h2>Hennepin County</h2>
+            </div>
+            <h5 class="article-content">Total Hennepin County Cases: {{ worldInfo.totalCountyCases }}</h5>
+            <h5 class="article-content">Total Hennepin County Deaths: {{ worldInfo.totalCountyDeaths }}</h5>
+            <h5 class="article-content">Daily Cases: {{ worldInfo.newCountyCases}}</h5>
+            <h5 class="article-content">Daily Deaths Increase: {{ worldInfo.newCountyDeaths }}</h5>
+        </div>
+    </article>
+{% endblock content %}

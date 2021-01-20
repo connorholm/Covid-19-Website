@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='main.css') }}">
+    
+        {% if title %}
+            <title>Covid-19 Information - {{ title }}</title>
+        {% else %}
+            <title>Covid-19</title>
+        {% endif %}
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="header-site navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+              <div class="container">
+                <a class="navbar-brand mr-4" href="/">Covid-19 Information Provider</a>
+                <a class="navbar-brand mr-4" style="color: #ffffff; text-align: right;">{{ title }}</a>
+                  <!-- Navbar Right Side -->
+              </div>
+            </nav>
+        </header>
+          <main role="main" class="container">
+            <div class="row">
+              <div class="col-md-8">
+                {% block content %}{% endblock %}
+              </div>
+              <div class="col-md-4">
+                <div class="content-section">
+                  <h3>Information Sidebar</h3>
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-light"><a href="/">Home</a></li>
+                      <li class="list-group-item list-group-item-light"><a href="/news">Latest News</a></li>
+                      <li class="list-group-item list-group-item-light"><a href="/prevention">Prevention</a></li>
+                      <li class="list-group-item list-group-item-light"><a href="/about">About</a></li>
+                      <li class="list-group-item list-group-item-light"><a href="/references">References</a></li>
+                    </ul>
+                  <img id="image" src="https://bigredmarkets.com/wp-content/uploads/2020/03/Covid-19.png" alt="Image of coronavirsus" width=200>
+              </div>
+<div class="content-section">
+                  <h3>Current Risk</h3>
+                  <h5 class="list-group-item list-group-item-light">High</h5>
+                </div>
+              </div>
+            </div>
+          </main>
+    </body>
+</html>
